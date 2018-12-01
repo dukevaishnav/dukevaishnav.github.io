@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                      http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+  version="3.1"
+  metadata-complete="true">
+
+  <display-name>Welcome to Tomcat</display-name>
+  <description>
+     Welcome to Tomcat
+  </description>
+    <context-param>
+	<param-name>driver</param-name>
+	<param-value>com.mysql.jdbc.Driver</param-value>
+	</context-param>
+	<context-param>
+	<param-name>urllink</param-name>
+	<param-value>jdbc:mysql://localhost:3306/pf</param-value>
+	</context-param>
+	<servlet>
+     		<servlet-name>ContextAndInit</servlet-name>
+     		<servlet-class>ContextAndInit</servlet-class>
+			<init-param>
+				<param-name>driver</param-name>
+				<param-value>com.mysql.jdbc.Driver</param-value>
+			</init-param>
+			<init-param>
+				<param-name>urllink</param-name>
+				<param-value>jdbc:mysql://localhost:3306/pf</param-value>
+			</init-param>
+	
+	</servlet>
+
+    <servlet-mapping>
+        <servlet-name>ContextAndInit</servlet-name>
+        <url-pattern>/webinf/classes/ContextAndInit</url-pattern>
+    </servlet-mapping>
+    
+	<servlet>
+        <servlet-name>FirstProgram</servlet-name>
+        <servlet-class>FirstProgram</servlet-class>
+    </servlet>
+	
+	<servlet-mapping>
+        <servlet-name>FirstProgram</servlet-name>
+        <url-pattern>/webinf/classes/FirstProgram</url-pattern>
+    </servlet-mapping>
+
+    
+ <servlet>
+        <servlet-name>ProjectInsertValueUsertype</servlet-name>
+        <servlet-class>ProjectInsertValueUsertype</servlet-class>
+    </servlet>
+	<servlet-mapping>
+        <servlet-name>ProjectInsertValueUsertype</servlet-name>
+        <url-pattern>/webinf/classes/ProjectInsertValueUsertype</url-pattern>
+    </servlet-mapping>
+
+ <servlet>
+        <servlet-name>ServletPage</servlet-name>
+        <servlet-class>ServletPage</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletPage</servlet-name>
+        <url-pattern>/webinf/classes/ServletPage</url-pattern>
+    </servlet-mapping>
+<servlet>
+<servlet-name>GetParam</servlet-name>
+<servlet-class>GetParam</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>GetParam</servlet-name>
+<url-pattern>/bothday/classes/GetParam</url-pattern> 
+</servlet-mapping>
+ <servlet>
+        <servlet-name>ServletCalci</servlet-name>
+        <servlet-class>ServletCalci</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ServletCalci</servlet-name>
+        <url-pattern>/webinf/classes/ServletCalci</url-pattern>
+    </servlet-mapping>
+ <servlet>
+        <servlet-name>GetParamNames</servlet-name>
+        <servlet-class>GetParamNames</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>GetParamNames</servlet-name>
+        <url-pattern>/webinf/classes/GetParamNames</url-pattern>
+    </servlet-mapping>
+ <servlet>
+        <servlet-name>DemoGetAndPost</servlet-name>
+        <servlet-class>DemoGetAndPost</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DemoGetAndPost</servlet-name>
+        <url-pattern>/webinf/classes/DemoGetAndPost</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>WelcomeAndLoginFailed</servlet-name>
+        <servlet-class>WelcomeAndLoginFailed</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>WelcomeAndLoginFailed</servlet-name>
+        <url-pattern>/webinf/classes/WelcomeAndLoginFailed</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>LoginByPost</servlet-name>
+        <servlet-class>LoginByPost</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>LoginByPost</servlet-name>
+        <url-pattern>/webinf/classes/LoginByPost</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>RegisterInDb</servlet-name>
+        <servlet-class>RegisterInDb</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>RegisterInDb</servlet-name>
+        <url-pattern>/webinf/classes/RegisterInDb</url-pattern>
+    </servlet-mapping>
+ <servlet>
+        <servlet-name>LoginFailureDb</servlet-name>
+        <servlet-class>LoginFailureDb</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>LoginFailureDb</servlet-name>
+        <url-pattern>/webinf/classes/LoginFailureDb</url-pattern>
+    </servlet-mapping>
+ <servlet>
+        <servlet-name>FacultyDb</servlet-name>
+        <servlet-class>FacultyDb</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>FacultyDb</servlet-name>
+        <url-pattern>/webinf/classes/FacultyDb</url-pattern>
+    </servlet-mapping>
+ <servlet>
+        <servlet-name>LoginDb</servlet-name>
+        <servlet-class>LoginDb</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>LoginDb</servlet-name>
+        <url-pattern>/webinf/classes/LoginDb</url-pattern>
+    </servlet-mapping>
+ <servlet>
+        <servlet-name>StudentDb</servlet-name>
+        <servlet-class>StudentDb</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>StudentDb</servlet-name>
+        <url-pattern>/webinf/classes/StudentDb</url-pattern>
+    </servlet-mapping>
+ <servlet>
+        <servlet-name>AdminDb</servlet-name>
+        <servlet-class>AdminDb</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AdminDb</servlet-name>
+        <url-pattern>/webinf/classes/AdminDb</url-pattern>
+    </servlet-mapping>
+ <servlet>
+        <servlet-name>ViewAllRecords</servlet-name>
+        <servlet-class>ViewAllRecords</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ViewAllRecords</servlet-name>
+        <url-pattern>/webinf/classes/ViewAllRecords</url-pattern>
+    </servlet-mapping>
+<servlet>
+        <servlet-name>UpdateValue</servlet-name>
+        <servlet-class>UpdateValue</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UpdateValue</servlet-name>
+        <url-pattern>/webinf/classes/UpdateValue</url-pattern>
+    </servlet-mapping>
+	<servlet>
+        <servlet-name>DeleteValue</servlet-name>
+        <servlet-class>DeleteValue</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DeleteValue</servlet-name>
+        <url-pattern>/webinf/classes/DeleteValue</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SessionManagement2</servlet-name>
+        <servlet-class>SessionManagement2</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SessionManagement2</servlet-name>
+        <url-pattern>/webinf/classes/SessionManagement2</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ProjectViewLoginDetails</servlet-name>
+        <servlet-class>ProjectViewLoginDetails</servlet-class>
+    </servlet>
+	<servlet-mapping>
+        <servlet-name>ProjectViewLoginDetails</servlet-name>
+        <url-pattern>/webinf/classes/ProjectViewLoginDetails</url-pattern>
+    </servlet-mapping>
+	<servlet>
+        <servlet-name>ProjectUpdateValueUsertype</servlet-name>
+        <servlet-class>ProjectUpdateValueUsertype</servlet-class>
+    </servlet>
+	
+    <servlet-mapping>
+        <servlet-name>ProjectUpdateValueUsertype</servlet-name>
+        <url-pattern>/webinf/classes/ProjectUpdateValueUsertype</url-pattern>
+    </servlet-mapping>
+	
+	<servlet>
+        <servlet-name>ProjectDeleteValueUsertype</servlet-name>
+        <servlet-class>ProjectDeleteValueUsertype</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ProjectDeleteValueUsertype</servlet-name>
+        <url-pattern>/webinf/classes/ProjectDeleteValueUsertype</url-pattern>
+    </servlet-mapping>
+	<servlet>
+        <servlet-name>ProjectViewUsertypeDetails</servlet-name>
+        <servlet-class>ProjectViewUsertypeDetails</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ProjectViewUsertypeDetails</servlet-name>
+        <url-pattern>/webinf/classes/ProjectViewUsertypeDetails</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>SessionManagement3</servlet-name>
+        <servlet-class>SessionManagement3</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SessionManagement3</servlet-name>
+        <url-pattern>/webinf/classes/SessionManagement3</url-pattern>
+    </servlet-mapping>
+	<servlet>
+        <servlet-name>ProjectLogin</servlet-name>
+        <servlet-class>ProjectLogin</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ProjectLogin</servlet-name>
+        <url-pattern>/webinf/classes/ProjectLogin</url-pattern>
+    </servlet-mapping>
+	<servlet>
+        <servlet-name>ProjectUpdateValue</servlet-name>
+        <servlet-class>ProjectUpdateValue</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ProjectUpdateValue</servlet-name>
+        <url-pattern>/webinf/classes/ProjectUpdateValue</url-pattern>
+    </servlet-mapping>
+    
+
+<servlet>
+<servlet-name>ProjectRegistration</servlet-name>
+<servlet-class>ProjectRegistration</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>ProjectRegistration</servlet-name>
+<url-pattern>/webinf/classes/ProjectRegistration</url-pattern> 
+</servlet-mapping>
+
+<servlet>
+<servlet-name>ProjectMainPageGuest</servlet-name>
+<servlet-class>ProjectMainPageGuest</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>ProjectMainPageGuest</servlet-name>
+<url-pattern>/webinf/classes/ProjectMainPageGuest</url-pattern> 
+</servlet-mapping>
+
+<servlet>
+<servlet-name>ProjectViewStudentDetails</servlet-name>
+<servlet-class>ProjectViewStudentDetails</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>ProjectViewStudentDetails</servlet-name>
+<url-pattern>/webinf/classes/ProjectViewStudentDetails</url-pattern> 
+</servlet-mapping>
+
+<servlet>
+<servlet-name>ProjectUpdateValueStudentDetails</servlet-name>
+<servlet-class>ProjectUpdateValueStudentDetails</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>ProjectUpdateValueStudentDetails</servlet-name>
+<url-pattern>/webinf/classes/ProjectUpdateValueStudentDetails</url-pattern> 
+</servlet-mapping>
+
+<servlet>
+<servlet-name>ProjectInsertValueStudentDetails</servlet-name>
+<servlet-class>ProjectInsertValueStudentDetails</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>ProjectInsertValueStudentDetails</servlet-name>
+<url-pattern>/webinf/classes/ProjectInsertValueStudentDetails</url-pattern> 
+</servlet-mapping>
+
+<servlet>
+<servlet-name>ProjectDeleteValueStudentDetails</servlet-name>
+<servlet-class>ProjectDeleteValueStudentDetails</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>ProjectDeleteValueStudentDetails</servlet-name>
+<url-pattern>/webinf/classes/ProjectDeleteValueStudentDetails</url-pattern> 
+</servlet-mapping>
+
+<servlet>
+<servlet-name>ProjectMainPageStudent</servlet-name>
+<servlet-class>ProjectMainPageStudent</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>ProjectMainPageStudent</servlet-name>
+<url-pattern>/webinf/classes/ProjectMainPageStudent</url-pattern> 
+</servlet-mapping>
+
+<servlet>
+<servlet-name>ProjectMainPageFaculty</servlet-name>
+<servlet-class>ProjectMainPageFaculty</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>ProjectMainPageFaculty</servlet-name>
+<url-pattern>/webinf/classes/ProjectMainPageFaculty</url-pattern> 
+</servlet-mapping>
+
+</web-app>

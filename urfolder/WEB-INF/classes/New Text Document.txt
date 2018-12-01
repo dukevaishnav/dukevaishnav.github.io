@@ -1,0 +1,52 @@
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServlet;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.ResultSet;
+import java.sql.PreparedStatement;
+import javax.servlet.ServletException;
+import java.io.PrintWriter;
+public class ProjectViewLoginDetails extends HttpServlet
+{public void doGet(HttpServletRequest req,HttpServletResponse res) throws IOException,ServletException
+	{PrintWriter pw=res.getWriter();
+	 pw.println("<html><body bgcolor='yellow'><h1><center><font color='blue'>login table enteries</font></center></h1>");
+       	 Connection conn=DbProjectConnector.con;
+       String fname,lname,mn,password,usertype;
+		int id;
+		try
+	{
+	 String query="select * from logindetails";
+	 PreparedStatement ps=conn.prepareStatement(query);
+	 ResultSet rs=ps.executeQuery(); 
+	 pw.println("<br/><br/><center><table style='color:red;border:1px solid blue'>");
+	 pw.println("<tr><th>username</th><th>id</th><th>password</th><th>usertype</th><th>UPDATE</th><th>DELETE</th></tr>");
+	 while(rs.next())
+		{ fname=rs.getString(1);
+		  lname=rs.getString(2);
+		  mn=rs.getString(3);
+		  password=rs.getString(4);
+			id=rs.getInt("id");
+	String query2="select * from usertype_details where mobile_no=?";
+	PreparedStatement ps2=conn.prepareStatement(query2);
+	ps2.setString(1,mn);
+	 ResultSet rs2=ps2.executeQuery();
+	if(rs2.next())
+		{if(rs2.getString("usertype").equalsIgnoreCase("admin"));
+		  usertype="admin";
+		 else
+		  usertype="faculty";
+		}
+	else
+		usertype="student";
+	pw.println("<tr><td>"+fname+"</td><td>"+lname+"</td><td>"+mn+"</td><td>"+password+"</td><td>"+id+"</td>");
+		  pw.println("<td><a href=UpdateValue?id="+id+"&fname="+fname+"&type="+utype+"&pass="+pass+">Update</a></td><td><a href=DeleteValue?id="+id+"&uname="+uname+"&utype="+utype+"&pass="+pass+">Delete</a></td></tr></tr>");
+		}
+	}
+	catch(SQLException ex)
+	{ex.printStackTrace();
+	}
+	 pw.println("</table></center></body></html>");
+	}
+} 	  

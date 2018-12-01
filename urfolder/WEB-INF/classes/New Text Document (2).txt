@@ -1,0 +1,40 @@
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
+import javax.servlet.ServletException;
+import java.io.PrintWriter;
+import javax.servlet.http.HttpServlet;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.PreparedStatement;
+public class ProjectUpdateValueUsertype extends HttpServlet
+{ public void doGet(HttpServletRequest req,HttpServletResponse      res) throws IOException,ServletException
+	{PrintWriter pw=res.getWriter();
+	 String mn=req.getParameter("mn");
+	 String usertype=req.getParameter("usertype");
+	 pw.println("<html><body bgcolor='yellow'><center><form method='post'>mobile_no<input type='text' value="+mn+" name='mn'/><br/>");
+		pw.println("usertype <select name='usertype'><option value='admin'>Admin</option><option value='faculty'>Faculty</option></select><p style"color:red">** enteries in this table are only made for adminand faculties, rest all are cosidered guest/students</p><br/><input type='submit' value='update'/></form></center></body></html>");
+	}
+public void doPost(HttpServletRequest req,HttpServletResponse res) throws IOException,ServletException
+	{String s1=req.getParameter("mn");
+	 String s2=req.getParameter("usertype");
+	 Connection conn=DbProjectConnector.con;
+String query;int flag=0;
+	try
+{ 	 query="update logindetails set usertype=? where mobile_no=?";
+	 PreparedStatement ps=conn.prepareStatement(query);
+       ps.setString(1,s2);
+	ps.setString(2,s1);
+	  flag=ps.executeUpdate();
+}
+catch(SQLException ex)
+{ex.printStackTrace();
+}
+PrintWriter pw=res.getWriter();
+pw.println("<html><body bgcolor='green'");
+if(flag!=0)
+pw.println("<h1><center><font color='red'>UPDATION SUCCESSFUL</font></center></h1><br/><br/><a href='ProjectViewUsertypeDetails'>BACK</a></body></html>");
+else
+pw.println("<h1><center><font color='red'>updation UNSUCCESSFUL !!</font></center></h1><br/><br/><a href='ProjectViewUsertypeDetails'>BACK</a></body></html>");
+}		 
+	}	  

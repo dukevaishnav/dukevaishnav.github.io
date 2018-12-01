@@ -1,0 +1,98 @@
+<html>
+<body bgcolor="cyan">
+<center>
+<h1 style="color:rgb(220,100,255);font-size:40;font-weight:900px;font-family:arial">REGISTRATION PAGE</h1>
+<br/><br/><br/>
+<form action="webinf/classes/ProjectRegistration" method="post" onsubmit="return check()">
+<table>
+	<tr>
+		<td><h1>First name</h1><p style="color"></td>
+		<td><input type="text" name="fname" id="fn" onkeyup="check2()"></td><td><p id="fp" style="color:red"></p></td> 
+	</tr>
+	<tr>
+		<td><h1>Last name</h1></td>
+		<td><input type="text" name="lname" id="ln" onkeyup="check3()"></td><td><p id="lp" style="color:red"></p></td>
+	</tr>
+	<tr>
+		<td><h1>mobile no.</h1></td>
+		<td><input type="text" placeholder="which is registered in college" name="mob" id="mn"></td>
+	</tr>
+	<tr>
+	<td><h1>Set password</h1></td>
+	<td><input type="password" name="pass" id="sps"/></td>
+	</tr>
+	<tr>
+		<td><h1>Confirm password</h1></td>
+		<td><input type="password" name="cpass" id="cps"/></td><td><p id="pp" style="color:red"></p></td>
+	</tr>
+	<tr>
+		<td><input type="submit" value="register" style="color:blue"></td>
+	</tr>
+	</form>
+	</center>
+	<script type="text/javascript">
+		 
+	 function check()
+		{
+		var lname=document.getElementById("ln").value;
+		var mob=document.getElementById("mn").value;
+		var pass=document.getElementById("sps").value;
+		var pass2=document.getElementById("cps").value;
+		 
+		 if(pass=="" || pass==null )
+		  {flag=false;
+		   document.getElementById("sps").focus();
+		   alert("SET A PASSWORD");
+		  }
+		  		 if(pass2=="" || pass2==null )
+		  {flag=false;
+		   document.getElementById("cps").focus();
+		   alert("please confirm password");
+		  }
+				 if(fname=="" || fname==null )
+		  {flag=false;
+		   document.getElementById("fn").focus();
+		   alert("enter your first name");
+		  }
+		  		 if(lname=="" || lname==null )
+		  {flag=false;
+		   document.getElementById("ln").focus();
+		   alert("enter your last name");
+		  }
+		  		 if(mob=="" || mob==null )
+		  {flag=false;
+		   document.getElementById("mn").focus();
+		   alert("enter your mobile number");
+		  }
+		  if(pass!=pass2)
+		  {flag=false;
+		   alert("set password and confirm password are not same");
+		   document.getElementById("cps").focus();
+		  }
+		 return flag;
+		}
+		function check2()
+		{ flag=true;
+		  fname=document.getElementById("fn").value;
+		  if(fname.length>15)
+		  {flag=false;
+		   document.getElementById("fp").innerHTML="max. 15 characters allowed";
+		  }
+		  else
+		  {flag=true;document.getElementById("fp").innerHTML="";
+		  }
+		  
+		}
+		
+		function check3()
+		{if(document.getElementById("ln").value.length>15)
+		  {flag=false;
+		   document.getElementById("lp").innerHTML="max. 15 characters allowed";
+		  }
+		  else
+		  {flag=true;document.getElementById("lp").innerHTML="";
+		  }
+		  
+		} 
+	</script>
+	</body></html>
